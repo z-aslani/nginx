@@ -1,0 +1,221 @@
+@font-face {
+  font-family: "IranSansNumbers";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/iransans/IRANSansWeb(FaNum).woff2") format("woff2"),
+    url("../fonts/iransans/IRANSansWeb(FaNum).woff") format("woff"),
+    url("../fonts/iransans/IRANSansWeb(FaNum).ttf") format("truetype"),
+    url("../fonts/iransans/IRANSansWeb(FaNum).eot") format("embedded-opentype");
+}
+body {
+  font-family: "IranSansNumbers", tahoma, sans-serif !important;
+  margin: 0;
+  text-align: right;
+  direction: rtl;
+  font-size: 14px;
+  color: #353533;
+}
+a {
+  text-decoration: none !important;
+  color: #0656a3;
+  outline: none !important;
+}
+a:hover {
+  color: #222;
+}
+a:focus,
+a:active,
+a:hover,
+a,
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input,
+textarea,
+select {
+  outline: 0 !important;
+}
+.form-control.input_material::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.53);
+}
+.form-control.input_material:-moz-placeholder {
+  color: rgba(255, 255, 255, 0.53);
+}
+.form-control.input_material::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.53);
+}
+.form-control.input_material:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.53);
+}
+.form-control::-webkit-input-placeholder {
+  color: #bbb;
+}
+.form-control:-moz-placeholder {
+  color: #bbb;
+}
+.form-control::-moz-placeholder {
+  color: #bbb;
+}
+.form-control:-ms-input-placeholder {
+  color: #bbb;
+}
+.form-control:focus::-webkit-input-placeholder {
+  color: #bbb;
+}
+.form-control:focus:-moz-placeholder {
+  color: #eee;
+} /* FF 4-18 */
+.form-control:focus::-moz-placeholder {
+  color: #eee;
+} /* FF 19+ */
+button:focus {
+  outline: none;
+}
+*:focus {
+  outline: 0;
+}
+.wego_elem {
+  max-width: 685px;
+  width: 100%;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+form.wego_forms {
+  display: flex;
+  align-items: center;
+  background: #98cc00;
+  padding: 10px;
+  min-height: 1px;
+  height: 100%;
+  border-radius: 4px 0 0 4px;
+}
+
+.wego_logos {
+  background: #fff;
+  height: 82px;
+  min-height: 1px;
+  display: flex;
+  align-items: center;
+  padding: 0px 10px 0 32px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 4px 4px 0;
+}
+
+.wego_logos:before {
+  content: "";
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  background: #98cc00;
+  transform: translateY(-50%);
+  top: 50%;
+  border-radius: 50%;
+  z-index: 0;
+  left: -188px;
+  border: 4px solid #609601;
+}
+
+.wego_input {
+  border-radius: 30px;
+  background: #fff;
+  border: none;
+  padding: 9px;
+  max-width: 110px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.wego_field_divid {
+  margin: 0 15px;
+}
+
+.wego__submit {
+  background: #4a8200;
+  color: #fff;
+  border: 0;
+  border-bottom: 3px solid #385b0a;
+  padding: 5px 15px;
+  border-radius: 30px;
+  font-family: inherit;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+.wego__submit:hover {
+  background: #467704;
+}
+
+i.submit_icon {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  vertical-align: middle;
+  background: url(../images/search.png) no-repeat center;
+}
+
+.wego_elem * {
+  font-family: inherit;
+}
+.autocomplete-suggestions {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #999;
+  background: #fff;
+  cursor: default;
+  overflow: auto;
+  -webkit-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+  -moz-box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+  box-shadow: 1px 4px 3px rgba(50, 50, 50, 0.64);
+}
+.autocomplete-suggestion {
+  padding: 2px 5px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.autocomplete-no-suggestion {
+  padding: 2px 5px;
+}
+.autocomplete-selected {
+  background: #f0f0f0;
+}
+.autocomplete-suggestions strong {
+  font-weight: bold;
+  color: #000;
+}
+.autocomplete-group {
+  padding: 2px 5px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #000;
+  display: block;
+  border-bottom: 1px solid #000;
+}
+input {
+  font-size: 28px;
+  border: 1px solid #ccc;
+  display: block;
+}
+
+@media only screen and (max-width: 680px) {
+  .wego_input {
+    max-width: 50px;
+  }
+  .wego_field_divid img {
+    max-width: 45px;
+  }
+  .wego_iframe-inner {
+    height: 80px;
+  }
+}

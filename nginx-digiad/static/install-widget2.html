@@ -1,0 +1,207 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8"/>
+    <link href="https://cdn.rawgit.com/rastikerdar/shabnam-font/v4.0.0/dist/font-face.css" rel="stylesheet"
+          type="text/css"/>
+    <style>
+        @media only screen and (min-width: 600px) {
+            body {
+                display: none !important;
+            }
+        }
+
+        body {
+            direction: rtl;
+            text-align: right;
+            font-family: 'Shabnam', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .ni-clear {
+            clear: both;
+        }
+
+        .ni-install {
+            border: solid 1px #ddd;
+            padding: 8px 12px;
+            background-color: #f5f5f5;
+            position: relative;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            /*width: 300px;*/
+        }
+
+        .ni-install a {
+            text-decoration: none;
+        }
+
+        .ni-install-top {
+            position: relative;
+        }
+
+        .ni-install-mediaad1 {
+            background-image: url('https://storage.backtory.com/mediaad/image/1533976954941_icon.jpg');
+            width: 20px;
+            height: 20px;
+            background-size: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .ni-install-mediaad2 {
+            background-image: url('https://storage.backtory.com/mediaad/image/1533970068513_icon_logo.png');
+            width: 45px;
+            height: 20px;
+            background-size: 100%;
+            position: absolute;
+            left: 20px;
+            top: 0;
+        }
+
+        .ni-install-top-icon {
+            float: right;
+        }
+
+        .ni-install-top-text  {
+            float: right;
+            padding-right: 10px;
+            margin-top: 8px;
+        }
+
+        .ni-install-title {
+            font-size: 125%;
+            color: #333;
+        }
+
+        .ni-install-store-text {
+            float: right;
+            font-size: 75%;
+            color: #777;
+            line-height: 25px;
+            padding-right: 5px;
+        }
+
+        .ni-install-store-icon {
+            float: right;
+            background: url('https://www.gstatic.com/android/market_images/web/play_prism_hlock_2x.png') left;
+            width: 20px;
+            height: 20px;
+            background-size: cover;
+
+        }
+
+        .ni-install-icon {
+            background-image: url('https://lh3.googleusercontent.com/_-pSSeqN0rKdi9eUdlkh66ppldgMftD1QI6_-sMxhIKcHCXMN_3-himsJ2taq1xT4A=s360-rw');
+            width: 80px;
+            height: 80px;
+            background-size: 100%;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            border-radius: 8px;
+        }
+
+        .ni-install-rate {
+            background: url('star.png') right;
+            width: 48px;
+            height: 12px;
+            background-size: contain;
+            margin: 6px 0 3px;
+        }
+
+        .ni-install-mid {
+            position: relative;
+            padding-top: 66%;
+            margin-top: 8px;
+        }
+
+        .ni-install-image {
+            background-image: url('https://storage.backtory.com/mediaad/image/1544513945581_url.jpg');
+            width: 100%;
+            height: 100%;
+            background-size: 100% 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .ni-install-image-text {
+            position: absolute;
+            bottom: 0;
+            z-index: 1;
+            padding: 15px 8px 15px 8px;
+            background-color: rgba(0, 0, 0, 0.7);
+            left: 0;
+            right: 0;
+            color:  white;
+            text-align: center;
+            font-size: 80%;
+        }
+
+        .ni-install-bot {
+            padding-top: 8px;
+        }
+
+        .ni-install-button {
+            padding: 8px 5px 10px 5px;
+            text-align: center;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            background-color: #02aa8b;
+            color: white;
+        }
+    </style>
+
+    <script>
+        var called = 0;
+        function resize() {
+            if (called > 10)
+                return;
+            called++;
+
+            parent.postMessage("mediaad:widget:mediaad-C:size:" + (document.getElementById("widget").scrollHeight + 3), "*");
+            console.log('resized: ' + (document.getElementById("widget").scrollHeight + 3));
+        }
+    </script>
+</head>
+
+<body onload="resize()" onresize="resize()">
+<div class="ni-install" id="widget">
+    <a href="https://mediaad.org" target="_blank">
+        <div class="ni-install-mediaad1"></div>
+        <div class="ni-install-mediaad2"></div>
+    </a>
+    <div class="ni-install-top">
+        <a href="https://app.adjust.com/oc80uuq?campaign=hi30k_app-promo&adgroup=aghdar&creative=test3" target="_blank">
+            <div class="ni-install-top-icon">
+                <div class="ni-install-icon"></div>
+            </div>
+            <div class="ni-install-top-text">
+                <div class="ni-install-title">مارکت آنلاین بامیلو</div>
+                <div class="ni-install-rate"></div>
+                <div class="ni-install-store">
+                    <div class="ni-install-store-icon"></div>
+                    <div class="ni-install-store-text"> نصب در گوگل پلی</div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="ni-clear"></div>
+    <div class="ni-install-mid">
+        <div class="ni-install-image"></div>
+        <div class="ni-install-image-text"> بهترین نیم‌بوت‌ها رو نصف قیمت از اپ بامیلو بخر!!</div>
+    </div>
+    <div class="ni-clear"></div>
+    <div class="ni-install-bot">
+        <a href="https://app.adjust.com/oc80uuq?campaign=hi30k_app-promo&adgroup=aghdar&creative=test3" target="_blank">
+            <div class="ni-install-button">نصب کنید</div>
+        </a>
+    </div>
+</div>
+</body>
+</html>

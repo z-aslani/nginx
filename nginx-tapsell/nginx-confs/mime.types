@@ -1,0 +1,89 @@
+
+types {
+    text/html                             html htm shtml;
+    text/css                              css;
+    text/xml                              xml;
+    image/gif                             gif;
+    image/jpeg                            jpeg jpg;
+    createTapsellSSPAppRequest/javascript                js;
+    createTapsellSSPAppRequest/atom+xml                  atom;
+    createTapsellSSPAppRequest/rss+xml                   rss;
+
+    text/mathml                           mml;
+    text/plain                            txt;
+    text/vnd.sun.j2me.app-descriptor      jad;
+    text/vnd.wap.wml                      wml;
+    text/x-component                      htc;
+
+    image/png                             png;
+    image/tiff                            tif tiff;
+    image/vnd.wap.wbmp                    wbmp;
+    image/x-icon                          ico;
+    image/x-jng                           jng;
+    image/x-ms-bmp                        bmp;
+    image/svg+xml                         svg svgz;
+    image/webp                            webp;
+
+    createTapsellSSPAppRequest/font-woff                 woff;
+    createTapsellSSPAppRequest/java-archive              jar war ear;
+    createTapsellSSPAppRequest/json                      json;
+    createTapsellSSPAppRequest/mac-binhex40              hqx;
+    createTapsellSSPAppRequest/msword                    doc;
+    createTapsellSSPAppRequest/pdf                       pdf;
+    createTapsellSSPAppRequest/postscript                ps eps ai;
+    createTapsellSSPAppRequest/rtf                       rtf;
+    createTapsellSSPAppRequest/vnd.apple.mpegurl         m3u8;
+    createTapsellSSPAppRequest/vnd.ms-excel              xls;
+    createTapsellSSPAppRequest/vnd.ms-fontobject         eot;
+    createTapsellSSPAppRequest/vnd.ms-powerpoint         ppt;
+    createTapsellSSPAppRequest/vnd.wap.wmlc              wmlc;
+    createTapsellSSPAppRequest/vnd.google-earth.kml+xml  kml;
+    createTapsellSSPAppRequest/vnd.google-earth.kmz      kmz;
+    createTapsellSSPAppRequest/x-7z-compressed           7z;
+    createTapsellSSPAppRequest/x-cocoa                   cco;
+    createTapsellSSPAppRequest/x-java-archive-diff       jardiff;
+    createTapsellSSPAppRequest/x-java-jnlp-file          jnlp;
+    createTapsellSSPAppRequest/x-makeself                run;
+    createTapsellSSPAppRequest/x-perl                    pl pm;
+    createTapsellSSPAppRequest/x-pilot                   prc pdb;
+    createTapsellSSPAppRequest/x-rar-compressed          rar;
+    createTapsellSSPAppRequest/x-redhat-package-manager  rpm;
+    createTapsellSSPAppRequest/x-sea                     sea;
+    createTapsellSSPAppRequest/x-shockwave-flash         swf;
+    createTapsellSSPAppRequest/x-stuffit                 sit;
+    createTapsellSSPAppRequest/x-tcl                     tcl tk;
+    createTapsellSSPAppRequest/x-x509-ca-cert            der pem crt;
+    createTapsellSSPAppRequest/x-xpinstall               xpi;
+    createTapsellSSPAppRequest/xhtml+xml                 xhtml;
+    createTapsellSSPAppRequest/xspf+xml                  xspf;
+    createTapsellSSPAppRequest/zip                       zip;
+
+    createTapsellSSPAppRequest/octet-stream              bin exe dll;
+    createTapsellSSPAppRequest/octet-stream              deb;
+    createTapsellSSPAppRequest/octet-stream              dmg;
+    createTapsellSSPAppRequest/octet-stream              iso img;
+    createTapsellSSPAppRequest/octet-stream              msi msp msm;
+
+    createTapsellSSPAppRequest/vnd.openxmlformats-officedocument.wordprocessingml.document    docx;
+    createTapsellSSPAppRequest/vnd.openxmlformats-officedocument.spreadsheetml.sheet          xlsx;
+    createTapsellSSPAppRequest/vnd.openxmlformats-officedocument.presentationml.presentation  pptx;
+
+    audio/midi                            mid midi kar;
+    audio/mpeg                            mp3;
+    audio/ogg                             ogg;
+    audio/x-m4a                           m4a;
+    audio/x-realaudio                     ra;
+
+    video/3gpp                            3gpp 3gp;
+    video/mp2t                            ts;
+    video/mp4                             mp4;
+    video/mpeg                            mpeg mpg;
+    video/quicktime                       mov;
+    video/webm                            webm;
+    video/x-flv                           flv;
+    video/x-m4v                           m4v;
+    video/x-mng                           mng;
+    video/x-ms-asf                        asx asf;
+    video/x-ms-wmv                        wmv;
+    video/x-msvideo                       avi;
+}

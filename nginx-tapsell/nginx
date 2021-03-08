@@ -1,0 +1,11 @@
+/var/log/nginx/access.log {
+        su root
+        missingok
+        rotate 1
+        notifempty
+        create 0644
+        sharedscripts
+	postrotate
+	  nginx -s reload
+	endscript
+}

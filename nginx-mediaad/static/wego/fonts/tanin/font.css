@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Wtanin';
+  src: url('Wtanin.woff') format('woff'),
+       url('Wtanin.ttf') format('truetype'),
+       url('Wtanin.svg#Wtanin') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'tanin';
+  src: url('tanin.eot');
+  src: url('tanin.woff2') format('woff2'),
+       url('tanin.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

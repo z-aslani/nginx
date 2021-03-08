@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'iraban';
+  src: url('iraban.eot');
+  src: url('iraban.woff2') format('woff2'),
+       url('IRAban.woff') format('woff'),
+       url('IRAban.ttf') format('truetype'),
+       url('IRAban.svg#IRAban') format('svg'),
+       url('iraban.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

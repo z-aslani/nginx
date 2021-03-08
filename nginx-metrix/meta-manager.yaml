@@ -1,0 +1,91 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  generation: 71
+  labels:
+    app: deeplink
+  name: deeplink
+  namespace: metrix
+  resourceVersion: "247651859"
+  selfLink: /apis/apps/v1/namespaces/metrix/deployments/deeplink
+  uid: e1d9997e-0fee-4f6f-b723-aab666e40c75
+spec:
+  minReadySeconds: 40
+  progressDeadlineSeconds: 600
+  replicas: 0
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: deeplink
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: deeplink
+        monitor: enabled
+    spec:
+      containers:
+      - env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: prod
+        - name: JAVA_OPTS
+          value: -Xss512k -XX:PermSize=64m -XX:MaxPermSize=256m -Xms512m -Xmx1024m
+            -XX:-OmitStackTraceInFastThrow
+        image: reg.pegah.tech/metrix/deeplink:15670-master-7391382e
+        imagePullPolicy: IfNotPresent
+        name: deeplink
+        ports:
+        - containerPort: 8080
+          name: act-prom
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 7
+          httpGet:
+            path: /actuator/health
+            port: 8080
+            scheme: HTTP
+          periodSeconds: 15
+          successThreshold: 1
+          timeoutSeconds: 2
+        resources:
+          limits:
+            memory: 2G
+          requests:
+            memory: 1G
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      imagePullSecrets:
+      - name: reg-pegah-credit
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      tolerations:
+      - effect: NoSchedule
+        key: metrix-servers
+        operator: Exists
+status:
+  availableReplicas: 2
+  conditions:
+  - lastTransitionTime: "2021-01-10T09:11:41Z"
+    lastUpdateTime: "2021-01-10T09:11:41Z"
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  - lastTransitionTime: "2020-10-27T15:05:21Z"
+    lastUpdateTime: "2021-02-09T12:46:18Z"
+    message: ReplicaSet "deeplink-5c58b6f8c" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  observedGeneration: 71
+  readyReplicas: 2
+  replicas: 2
+  updatedReplicas: 2

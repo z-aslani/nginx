@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+          integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+
+    <script type="text/javascript">
+        function getCookie(name) {
+//            return "eyJpZCI6IjU5MjMxM2Q5LTFlZmEtNGNlYS1iYzE3LWUyZjBjYzdiMTg2YSJ9";
+            var value = "; " + document.cookie;
+            var parts = value.split("; " + name + "=");
+            if (parts.length == 2) return parts.pop().split(";").shift();
+        }
+        function httpGet(theUrl) {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("GET", 'https://s1.mediaad.org/serve/products', false);
+//                xmlHttp.open( "POST", 'https://stg-s1.mediaad.org/serve/lsdkfj.com/loader.js', false ); // false for synchronous request
+            xmlHttp.setRequestHeader('Content-type', 'application/json');
+            xmlHttp.withCredentials = !0;
+            xmlHttp.onreadystatechange = function () {
+                var container = document.getElementById("result");
+
+                var products = JSON.parse(xmlHttp.responseText);
+
+                products.forEach(function (item) {
+                    var element = document.createElement("div");
+                    element.innerHTML = "<div class='col-sm-3'><div class='element'>" +
+                        "<a target='_blank' href='" + item.link + "'>" +
+                        "   <img src='" + item.image_cdn_uri + "' class='image'>" +
+                        "   <p class='title'>" + item.title + "</p>" +
+                        "</a>" +
+                        "</div></div>";
+
+                    container.appendChild(element);
+                });
+                console.log(JSON.parse(xmlHttp.responseText));
+            };
+            xmlHttp.send(null);
+//                xmlHttp.send(window.atob(getCookie('u2')));
+            return xmlHttp.responseText;
+        }
+        window.onload = httpGet;
+    </script>
+    <style>
+        body {
+            direction: rtl;
+        }
+
+        .image {
+            width: 100%;
+            max-height: 260px;
+        }
+
+        .title {
+
+        }
+
+        .element {
+            min-height: 310px;
+            max-height: 310px;
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="row">
+     
+    <div id="result" class="container">
+    </div>
+</div>
+</body>
+
+</html>

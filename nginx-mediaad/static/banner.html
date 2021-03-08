@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mediaad</title>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<a href="https://metrix.ir/?utm_source=mediaad&utm_medium=banner&utm_campaign=digiato290" id="link" target="_blank">
+    <img src="https://cdn.backtory.com/mediaad/assets/metrix.gif" width="100%"  id="img">
+</a>
+
+<script>
+    var rand = Math.random();
+    var link = document.getElementById("link");
+    var img = document.getElementById("img");
+
+    if (rand >= 0 && rand <= 0.33) {
+        link.setAttribute("href", "https://mediaad.org?utm_source=mediaad&utm_medium=banner&utm_campaign=digiato290");
+        img.setAttribute("src", "https://cdn.backtory.com/mediaad/assets/mediaad.gif");
+    } else if (rand > 0.3 && rand <= 0.66) {
+        link.setAttribute("href", "https://khabari.org?utm_source=mediaad&utm_medium=banner&utm_campaign=digiato290");
+        img.setAttribute("src", "https://cdn.backtory.com/mediaad/assets/khabari.gif");
+    }
+
+</script>
+
+</body>
+</html>

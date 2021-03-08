@@ -1,0 +1,123 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "31"
+  creationTimestamp: null
+  generation: 1
+  labels:
+    app: nginx
+  name: nginx
+  selfLink: /apis/apps/v1/namespaces/metrix/deployments/nginx
+spec:
+  minReadySeconds: 30
+  progressDeadlineSeconds: 600
+  replicas: 5
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: nginx
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nginx
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - eventstash
+              topologyKey: kubernetes.io/hostname
+            weight: 10
+      containers:
+      - env:
+        - name: LOGROTATE_CRONSCHEDULE
+          value: 0 0 * * * *
+        - name: LOGROTATE_COMPRESSION
+          value: compress
+        - name: LOGROTATE_SIZE
+          value: 1G
+        - name: LOGROTATE_COPIES
+          value: "1"
+        - name: LOGROTATE_INTERVAL
+          value: hourly
+        - name: LOGS_DIRECTORIES
+          value: /var/log/nginx
+        image: reg.pegah.tech/blacklabelops/logrotate:1.2
+        imagePullPolicy: IfNotPresent
+        name: logrotate
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /var/log/nginx
+          name: shared-data
+      - env:
+        - name: reset_var
+          value: v3
+        image: reg.pegah.tech/metricx/nginx:31-287940c
+        imagePullPolicy: IfNotPresent
+        name: nginx
+        resources:
+          limits:
+            memory: 4G
+          requests:
+            memory: 4G
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /var/log/nginx
+          name: shared-data
+      - env:
+        - name: reset_var
+          value: reset
+        - name: ES_VERSION
+          value: 6.4.2
+        - name: TZ
+          value: Asia/Tehran
+        image: reg.pegah.tech/metrix/logstash-nginx:1-5a67556
+        imagePullPolicy: IfNotPresent
+        name: logstash
+        ports:
+        - containerPort: 5044
+          protocol: TCP
+        resources:
+          limits:
+            memory: 4G
+          requests:
+            memory: 4G
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /var/log/nginx
+          name: shared-data
+      dnsPolicy: ClusterFirst
+      hostAliases:
+      - hostnames:
+        - reg.pegah.tech
+        ip: 172.24.99.99
+      imagePullSecrets:
+      - name: reg-pegah-credit
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      tolerations:
+      - effect: NoSchedule
+        key: metrix-servers
+        operator: Exists
+      volumes:
+      - emptyDir: {}
+        name: shared-data
+status: {}
